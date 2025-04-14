@@ -1,6 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
-import { CheckCircle, Phone, Star } from "lucide-react"
+import {CheckCircle, ChevronDown, Phone, Star} from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 
@@ -10,8 +10,13 @@ export default function Home() {
         <header className="sticky top-0 z-40 w-full bg-white/90 backdrop-blur-sm border-b border-purple-200">
           <div className="container mx-auto flex h-16 items-center justify-between px-4 sm:px-6 lg:px-8 max-w-7xl">
             <div className="flex items-center gap-2">
-              <span className="text-xl font-bold text-purple-700">AJ</span>
-              <span className="text-lg text-purple-600">Ana Julia</span>
+              <Image
+                  src="/images/logo1.png"
+                  alt="Logo Ana Julia"
+                  width={200}
+                  height={40}
+                  className="object-contain"
+              />
             </div>
             <nav className="hidden md:flex gap-6">
               <Link href="#inicio" className="text-sm font-medium text-black hover:text-purple-700">
@@ -59,17 +64,27 @@ export default function Home() {
         <main className="flex-1 w-full">
           {/* Hero Section */}
           <section id="inicio" className="w-full relative">
-            <div className="relative h-[500px] w-full">
+            <div className="relative h-screen w-full">
               <Image
-                  src="/images/banner.jpg"
-                  alt="Ana Julia Assistência Virtual"
+                  src="/images/banner2.jpg"
+                  alt="NOVA Assistência Virtual"
                   fill
                   className="object-cover"
                   priority
+                  quality={100}
               />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-white text-center">
-                </div>
+              <div className="absolute inset-0 flex flex-col items-center justify-center">
+                {/* O conteúdo do banner já está na imagem, então não precisamos adicionar texto aqui */}
+              </div>
+
+              {/* Indicador de scroll para mostrar que há mais conteúdo abaixo */}
+              <div className="absolute bottom-10 left-0 right-0 flex justify-center animate-bounce">
+                <a href="#quem-somos" className="flex flex-col items-center text-white">
+                  <span className="text-sm mb-2">Conheça nossos serviços</span>
+                  <div className="bg-white/30 backdrop-blur-sm p-3 rounded-full">
+                    <ChevronDown className="h-6 w-6" />
+                  </div>
+                </a>
               </div>
             </div>
           </section>
@@ -77,11 +92,17 @@ export default function Home() {
           {/* Quem Somos */}
           <section id="quem-somos" className="w-full py-16 bg-gradient-to-b from-purple-50 to-white">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
-              <h2 className="text-4xl font-bold text-center mb-4 text-purple-800">Quem somos nós?</h2>
-              <div className="bg-white p-8 rounded-lg shadow-sm mb-8 border border-purple-100">
-                <div className="flex flex-col md:flex-row gap-8 items-center mb-8">
+              {/* Título da seção */}
+              <div className="text-center mb-12">
+                <h2 className="text-4xl font-bold text-purple-800">Quem somos nós?</h2>
+              </div>
+
+              <div className="bg-white p-8 rounded-lg shadow-sm mb-8 border border-purple-100 space-y-12">
+
+                {/* Bloco Ana Júlia */}
+                <div className="flex flex-col md:flex-row gap-8 items-center">
                   <div className="flex-1">
-                    <h3 className="text-lg font-bold uppercase mb-4 text-purple-700">Apresentação Pessoal</h3>
+                    <h3 className="text-xl font-bold text-purple-700 mb-4">Ana Júlia</h3>
                     <p className="mb-4 text-black">
                       Me chamo Ana Júlia, sou a CEO da empresa e tenho ampla experiência com médicos, dentistas e
                       profissionais da saúde, já ofereci suporte para mais de 40 profissionais.
@@ -94,7 +115,7 @@ export default function Home() {
                   </div>
                   <div className="w-48 h-48 rounded-full overflow-hidden border-4 border-purple-200">
                     <Image
-                        src="/placeholder.svg?height=192&width=192"
+                        src="/images/anajulia4.jpg"
                         alt="Ana Júlia"
                         width={192}
                         height={192}
@@ -102,32 +123,40 @@ export default function Home() {
                     />
                   </div>
                 </div>
-                <div className="border-t border-purple-100 pt-8">
-                  <div className="flex flex-col md:flex-row gap-8 items-center">
-                    <div className="flex-1">
-                      <p className="mb-4 text-black">
-                        Meu nome é Isabella Borba, trabalho com publicidade a 7 anos. Sou sócia da Ana Júlia Assistente
-                        Virtual e atuo no suporte geral, na criação de artes gráficas e no gerenciamento de Instagram dos
-                        clientes.
-                      </p>
-                      <p className="italic underline text-purple-700 cursor-pointer hover:text-purple-900">
-                        Clique aqui para acessar meu Portfólio individual.
-                      </p>
-                    </div>
-                    <div className="w-48 h-48 rounded-full overflow-hidden border-4 border-purple-200">
-                      <Image
-                          src="/placeholder.svg?height=192&width=192"
-                          alt="Isabella Borba"
-                          width={192}
-                          height={192}
-                          className="object-cover"
-                      />
-                    </div>
+
+                {/* Bloco Isabella Borba */}
+                <div className="flex flex-col md:flex-row gap-8 items-center border-t border-purple-100 pt-8">
+                  <div className="flex-1">
+                    <h3 className="text-xl font-bold text-purple-700 mb-4">Isabella Borba</h3>
+                    <p className="mb-4 text-black">
+                      Meu nome é Isabella Borba, trabalho com publicidade há 7 anos. Sou sócia da Ana Júlia Assistente
+                      Virtual e atuo no suporte geral, na criação de artes gráficas e no gerenciamento de Instagram dos
+                      clientes.
+                    </p>
+                    <a
+                        href="https://www.behance.net/isabellaborba"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="italic underline text-purple-700 hover:text-purple-900"
+                    >
+                      Clique aqui para acessar meu Portfólio individual.
+                    </a>
+                  </div>
+                  <div className="w-48 h-48 rounded-full overflow-hidden border-4 border-purple-200">
+                    <Image
+                        src="/images/isabella.jpg"
+                        alt="Isabella Borba"
+                        width={192}
+                        height={192}
+                        className="object-cover"
+                    />
                   </div>
                 </div>
+
               </div>
             </div>
           </section>
+
 
           {/* Como Funciona */}
           <section id="como-funciona" className="w-full py-16 bg-white">
@@ -186,11 +215,12 @@ export default function Home() {
                   </div>
                 </div>
 
-                <div className="text-center mb-8">
-                  <p className="text-purple-700 mb-4">O atendimento humanizado proporciona</p>
-                  <p className="text-xl font-bold text-black mb-4">
-                    uma experiência personalizada, comunicação eficaz e construção de relacionamentos sólidos com os
-                    clientes.
+                <div className="text-center space-y-4 mb-12">
+                  <p className="text-base text-purple-700 font-medium text-lg">
+                    O atendimento humanizado proporciona:
+                  </p>
+                  <p className="text-lg md:text-xl text-black font-semibold max-w-2xl mx-auto">
+                    Uma experiência personalizada, comunicação eficaz e construção de relacionamentos sólidos com os clientes.
                   </p>
                 </div>
 
@@ -230,11 +260,9 @@ export default function Home() {
                   <p className="text-lg font-bold text-purple-700 mt-4 mb-2">
                     Isso tudo é personalizado de acordo com a preferência de cada cliente.
                   </p>
-
-                  <p className="text-black mb-2">Entretanto todos atendimentos possuem o mesmo objetivo:</p>
-
-                  <p className="text-xl font-bold text-purple-800">
-                    entregar excelência e fazer que seus clientes possuam uma experiência única desde o primeiro contato.
+                  <p className="text-black mb-2 font-medium text-lg">Entretanto todos atendimentos possuem o mesmo objetivo:</p>
+                  <p className="text-xl font-bold text-purple-800 text-center">
+                    Entregar excelência e fazer que seus clientes possuam uma experiência única desde o primeiro contato.
                   </p>
                 </div>
               </div>
@@ -331,22 +359,20 @@ export default function Home() {
 
               <div className="space-y-8">
                 <div className="flex flex-col md:flex-row items-center">
-                  <div className="md:w-1/4 flex justify-center mb-4 md:mb-0">
-                    <div className="relative">
-                      <div className="w-24 h-24 rounded-full overflow-hidden border-2 border-purple-300">
-                        <Image
-                            src="/placeholder.svg?height=96&width=96"
-                            alt="Dra Karina Moura"
-                            width={96}
-                            height={96}
-                            className="object-cover"
-                        />
-                      </div>
-                      <div className="absolute -right-4 -bottom-4 bg-black text-white p-2 rounded-lg text-xs">
-                        <p className="font-bold">Dra Karina Moura</p>
-                        <p>Fisioterapeuta</p>
-                        <p>@drakarina.fisio</p>
-                      </div>
+                  <div className="md:w-1/4 flex justify-center mb-4 md:mb-0 flex-col items-center">
+                    <div className="w-24 h-24 rounded-full overflow-hidden border-2 border-purple-300 mb-2">
+                      <Image
+                          src="/images/karina2.jpg"
+                          alt="Dra Karina Moura"
+                          width={96}
+                          height={96}
+                          className="object-cover"
+                      />
+                    </div>
+                    <div className="bg-black text-white p-2 rounded-lg text-xs text-center w-48">
+                      <p className="font-bold">Dra Karina Moura</p>
+                      <p>Fisioterapeuta</p>
+                      <p>@drakarina.fisio</p>
                     </div>
                   </div>
                   <div className="md:w-3/4">
@@ -364,23 +390,22 @@ export default function Home() {
                   </div>
                 </div>
 
+
                 <div className="flex flex-col md:flex-row items-center">
-                  <div className="md:w-1/4 flex justify-center mb-4 md:mb-0">
-                    <div className="relative">
-                      <div className="w-24 h-24 rounded-full overflow-hidden border-2 border-purple-300">
-                        <Image
-                            src="/placeholder.svg?height=96&width=96"
-                            alt="Dr Rafael Mérola"
-                            width={96}
-                            height={96}
-                            className="object-cover"
-                        />
-                      </div>
-                      <div className="absolute -right-4 -bottom-4 bg-black text-white p-2 rounded-lg text-xs">
-                        <p className="font-bold">Dr Rafael Mérola</p>
-                        <p>Cirurgião Bucomaxilofacial</p>
-                        <p>@dr.rafaelmerola</p>
-                      </div>
+                  <div className="md:w-1/4 flex justify-center mb-4 md:mb-0 flex-col items-center">
+                    <div className="w-24 h-24 rounded-full overflow-hidden border-2 border-purple-300 mb-2">
+                      <Image
+                          src="/images/rafael.jpg" // Troque pelo caminho correto
+                          alt="Dra Karina Moura"
+                          width={96}
+                          height={96}
+                          className="object-cover"
+                      />
+                    </div>
+                    <div className="bg-black text-white p-2 rounded-lg text-xs text-center w-48">
+                      <p className="font-bold">Dr Rafael Mérola</p>
+                      <p>Cirurgião Bucomaxilofacial</p>
+                      <p>@dr.rafaelmerola</p>
                     </div>
                   </div>
                   <div className="md:w-3/4">
@@ -400,137 +425,10 @@ export default function Home() {
                     </Card>
                   </div>
                 </div>
+
               </div>
             </div>
           </section>
-
-          {/* Proposta */}
-          <section id="proposta" className="w-full py-16 bg-gradient-to-b from-purple-50 to-white">
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
-              <h2 className="text-4xl font-bold text-center mb-4 text-purple-800">Proposta Assistência Virtual</h2>
-              <p className="text-center mb-12 text-black">Dr Leonardo Vaz</p>
-
-              <div className="overflow-x-auto">
-                <table className="w-full border-collapse">
-                  <thead>
-                  <tr>
-                    <th className="p-4 bg-black text-white text-left">PACOTE</th>
-                    <th className="p-4 bg-black text-white text-left">DESCRIÇÃO</th>
-                    <th className="p-4 bg-black text-white text-left">VALOR</th>
-                  </tr>
-                  </thead>
-                  <tbody>
-                  <tr className="bg-green-500 text-white">
-                    <td className="p-4 border">
-                      <div className="flex flex-col items-center">
-                        <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center mb-2">
-                          <svg
-                              width="24"
-                              height="24"
-                              viewBox="0 0 24 24"
-                              fill="none"
-                              xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                                d="M12 15L8.5 8L15.5 8L12 15Z"
-                                fill="silver"
-                                stroke="silver"
-                                strokeWidth="2"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                            />
-                            <path
-                                d="M20 21L4 21"
-                                stroke="silver"
-                                strokeWidth="2"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                            />
-                          </svg>
-                        </div>
-                        <span className="font-bold">BÁSICO</span>
-                      </div>
-                    </td>
-                    <td className="p-4 border">
-                      <ul className="list-disc pl-5">
-                        <li>6h/dia - Seg à Sex;</li>
-                        <li>Atendimento de WhatsApp;</li>
-                        <li>Organização de agenda;</li>
-                        <li>FollowUp.</li>
-                      </ul>
-                    </td>
-                    <td className="p-4 border">
-                      <div className="text-center">
-                        <p className="line-through">R$1.150</p>
-                        <p className="text-2xl font-bold">R$1.000</p>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr className="bg-gray-800 text-white">
-                    <td className="p-4 border">
-                      <div className="flex flex-col items-center">
-                        <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center mb-2">
-                          <svg
-                              width="24"
-                              height="24"
-                              viewBox="0 0 24 24"
-                              fill="none"
-                              xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                                d="M12 15L8.5 8L15.5 8L12 15Z"
-                                fill="gold"
-                                stroke="gold"
-                                strokeWidth="2"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                            />
-                            <path
-                                d="M20 21L4 21"
-                                stroke="gold"
-                                strokeWidth="2"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                            />
-                          </svg>
-                        </div>
-                        <span className="font-bold">GOLDEN</span>
-                      </div>
-                    </td>
-                    <td className="p-4 border">
-                      <ul className="list-disc pl-5">
-                        <li>8h/dia - Seg à Sex;</li>
-                        <li>Atendimento de WhatsApp;</li>
-                        <li>Organização de agenda;</li>
-                        <li>Follow-up;</li>
-                        <li>Pós atendimento;</li>
-                        <li>Relatório de agendamentos.</li>
-                      </ul>
-                    </td>
-                    <td className="p-4 border">
-                      <div className="text-center">
-                        <p className="line-through">R$1.250</p>
-                        <p className="text-2xl font-bold">R$1.150/MÊS</p>
-                      </div>
-                    </td>
-                  </tr>
-                  </tbody>
-                </table>
-              </div>
-
-              <p className="text-center mt-4 text-sm text-black">
-                Essa proposta possui uma validade de 30 dias contando da data em que foi enviada.
-              </p>
-
-              <div className="flex justify-center mt-4">
-                <div className="bg-green-600 text-white px-4 py-2 rounded-lg flex items-center">
-                  <CheckCircle className="mr-2" />
-                  <span className="font-bold">BEST SERVICE</span>
-                </div>
-              </div>
-            </div>
-          </section>
-
           {/* CTA */}
           <section className="w-full py-16 bg-gradient-to-r from-purple-900 to-purple-600 text-white">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl text-center">
@@ -558,7 +456,7 @@ export default function Home() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
             <div className="flex flex-col md:flex-row justify-between items-center">
               <div className="mb-4 md:mb-0">
-                <h3 className="text-xl font-bold mb-2 text-purple-300">Ana Julia</h3>
+                <h3 className="text-xl font-bold mb-2 text-purple-300">NOVA</h3>
                 <p className="text-sm">Assistência Virtual para Profissionais da Saúde</p>
               </div>
 
@@ -612,14 +510,14 @@ export default function Home() {
                     </svg>
                   </a>
                 </div>
-                <p className="text-sm">© 2024 Ana Julia Assistência Virtual. Todos os direitos reservados.</p>
+                <p className="text-sm">© 2024 NOVA Assistência Virtual. Todos os direitos reservados.</p>
               </div>
 
               <div className="flex items-center">
                 <Phone className="mr-2 text-purple-300" />
                 <div>
-                  <p className="text-sm">(00) 00000-0000</p>
-                  <p className="text-sm">contato@anajulia.com.br</p>
+                  <p className="text-sm">(21) 982262570</p>
+                  <p className="text-sm">av.contatonova@gmail.com</p>
                 </div>
               </div>
             </div>

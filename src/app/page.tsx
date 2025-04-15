@@ -81,8 +81,9 @@ export default function Home() {
         <main className="flex-1 w-full">
           {/* Hero Section */}
           <section id="inicio" className="w-full relative">
-            <div className="relative aspect-[9/16] sm:aspect-[16/9] w-full">
-              <Image
+            <div className="relative w-full min-h-[350px] sm:min-h-[400px] md:min-h-[500px] lg:min-h-[600px]">
+
+            <Image
                   src="/images/banner2.jpg"
                   alt="NOVA Assistência Virtual"
                   fill

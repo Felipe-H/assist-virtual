@@ -201,11 +201,6 @@ export default function Home() {
                       CEO da empresa com ampla experiência com médicos, dentistas e profissionais da saúde, mais de
                       50 consultórios e clínicas atendidos. Especialista em gatilhos mentais e estratégias de agendamentos
                     </p>
-                    <p className="text-black">
-                      O foco de nossa empresa é otimizar cada vez mais o seu negócio, oferecendo suporte especializado,
-                      aplicando estratégias de conversão, otimizando a organização de seu negócio e fidelizando seus
-                      pacientes.
-                    </p>
                   </div>
                   <div className="w-48 h-48 rounded-full overflow-hidden border-4 border-purple-200">
                     <Image

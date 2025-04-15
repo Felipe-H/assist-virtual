@@ -14,7 +14,9 @@ export default function Home() {
   return (
       <div className="flex min-h-screen flex-col items-center w-full bg-[#f5f5f5]">
         <header className="sticky top-0 z-40 w-full bg-white/90 backdrop-blur-sm border-b border-purple-200">
-          <div className="container mx-auto flex h-16 items-center justify-between px-4 sm:px-6 lg:px-8 max-w-7xl relative">
+          <div className="container mx-auto flex h-16 items-center px-4 sm:px-6 lg:px-8 max-w-7xl relative justify-between">
+
+            {/* LOGO */}
             <div className="flex items-center gap-2">
               <Image
                   src="/images/logo1.png"
@@ -25,34 +27,36 @@ export default function Home() {
               />
             </div>
 
-            {/* Menu Desktop */}
-            <nav className="hidden md:flex gap-6">
-              <Link href="#inicio" className="text-sm font-medium text-black hover:text-purple-700">Início</Link>
-              <Link href="#quem-somos" className="text-sm font-medium text-black hover:text-purple-700">Quem Somos</Link>
-              <Link href="#como-funciona" className="text-sm font-medium text-black hover:text-purple-700">Como Funciona</Link>
-              <Link href="#atendimento" className="text-sm font-medium text-black hover:text-purple-700">Atendimento</Link>
-              <Link href="#depoimentos" className="text-sm font-medium text-black hover:text-purple-700">Depoimentos</Link>
-              <Link href="#proposta" className="text-sm font-medium text-black hover:text-purple-700">Proposta</Link>
-            </nav>
+            {/* MENU E BOTÃO - DESKTOP */}
+            <div className="hidden md:flex items-center gap-10">
+              <nav className="flex gap-6">
+                <Link href="#inicio" className="text-sm font-medium text-black hover:text-purple-700">Início</Link>
+                <Link href="#quem-somos" className="text-sm font-medium text-black hover:text-purple-700">Quem Somos</Link>
+                <Link href="#como-funciona" className="text-sm font-medium text-black hover:text-purple-700">Como Funciona</Link>
+                <Link href="#atendimento" className="text-sm font-medium text-black hover:text-purple-700">Atendimento</Link>
+                <Link href="#depoimentos" className="text-sm font-medium text-black hover:text-purple-700">Depoimentos</Link>
+                {/*<Link href="#proposta" className="text-sm font-medium text-black hover:text-purple-700">Proposta</Link>*/}
+              </nav>
 
-            <a
-                href="https://wa.me/5521982262570?text=Olá%2C%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20conversa."
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hidden md:flex items-center gap-2 bg-purple-600 hover:bg-purple-700 text-white font-bold px-4 py-2 rounded-md transition-colors"
-            >
-              <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                  className="w-5 h-5 text-white"
+              <a
+                  href="https://wa.me/5521982262570?text=Olá%2C%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20conversa."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 bg-purple-600 hover:bg-purple-700 text-white font-bold px-4 py-2 rounded-md transition-colors"
               >
-                <path d="M20.52 3.48A12.073 12.073 0 0 0 12.001 0C5.382 0 .001 5.372.001 11.99a11.9 11.9 0 0 0 1.65 6.006L0 24l6.185-1.627A11.94 11.94 0 0 0 12 23.981c6.62 0 12-5.372 12-11.99a11.94 11.94 0 0 0-3.48-8.511Zm-8.52 18.03a9.89 9.89 0 0 1-5.063-1.378l-.363-.215-3.67.966.982-3.574-.236-.367a9.875 9.875 0 0 1-1.524-5.252c0-5.458 4.445-9.899 9.91-9.899a9.86 9.86 0 0 1 7.008 2.905 9.84 9.84 0 0 1 2.902 6.993c0 5.457-4.444 9.901-9.91 9.901Zm5.411-7.473c-.296-.148-1.755-.867-2.027-.967-.273-.1-.472-.149-.671.15-.2.297-.771.967-.945 1.166-.173.198-.347.223-.644.074-.297-.15-1.256-.462-2.392-1.475-.883-.788-1.48-1.762-1.652-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.15-.174.198-.298.297-.497.099-.198.05-.373-.025-.52-.074-.148-.671-1.622-.919-2.223-.242-.583-.49-.5-.67-.51l-.572-.01c-.198 0-.52.075-.792.373s-1.04 1.016-1.04 2.48 1.064 2.876 1.213 3.074c.148.198 2.093 3.197 5.074 4.484.709.305 1.263.486 1.695.621.712.226 1.36.194 1.872.118.571-.085 1.755-.717 2.003-1.41.247-.694.247-1.288.173-1.411-.075-.124-.272-.198-.568-.347Z" />
-              </svg>
-              Fale Conosco
-            </a>
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                    className="w-4 h-4 text-white"
+                >
+                  <path d="M20.52 3.48A12.073 12.073 0 0 0 12.001 0C5.382 0 .001 5.372.001 11.99a11.9 11.9 0 0 0 1.65 6.006L0 24l6.185-1.627A11.94 11.94 0 0 0 12 23.981c6.62 0 12-5.372 12-11.99a11.94 11.94 0 0 0-3.48-8.511Zm-8.52 18.03a9.89 9.89 0 0 1-5.063-1.378l-.363-.215-3.67.966.982-3.574-.236-.367a9.875 9.875 0 0 1-1.524-5.252c0-5.458 4.445-9.899 9.91-9.899a9.86 9.86 0 0 1 7.008 2.905 9.84 9.84 0 0 1 2.902 6.993c0 5.457-4.444 9.901-9.91 9.901Zm5.411-7.473c-.296-.148-1.755-.867-2.027-.967-.273-.1-.472-.149-.671.15-.2.297-.771.967-.945 1.166-.173.198-.347.223-.644.074-.297-.15-1.256-.462-2.392-1.475-.883-.788-1.48-1.762-1.652-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.15-.174.198-.298.297-.497.099-.198.05-.373-.025-.52-.074-.148-.671-1.622-.919-2.223-.242-.583-.49-.5-.67-.51l-.572-.01c-.198 0-.52.075-.792.373s-1.04 1.016-1.04 2.48 1.064 2.876 1.213 3.074c.148.198 2.093 3.197 5.074 4.484.709.305 1.263.486 1.695.621.712.226 1.36.194 1.872.118.571-.085 1.755-.717 2.003-1.41.247-.694.247-1.288.173-1.411-.075-.124-.272-.198-.568-.347Z" />
+                </svg>
+                Fale Conosco
+              </a>
+            </div>
 
-            {/* Botão hamburguer */}
+            {/* BOTÃO MENU MOBILE */}
             <Button
                 variant="outline"
                 size="icon"
@@ -69,7 +73,7 @@ export default function Home() {
               </svg>
             </Button>
 
-            {/* Menu Mobile */}
+            {/* MENU MOBILE */}
             {isMobileMenuOpen && (
                 <div className="absolute top-16 right-4 bg-white border border-purple-200 shadow-lg rounded-md p-4 flex flex-col gap-4 z-50 md:hidden w-60">
                   <Link href="#inicio" onClick={() => setMobileMenuOpen(false)}>Início</Link>
@@ -77,7 +81,6 @@ export default function Home() {
                   <Link href="#como-funciona" onClick={() => setMobileMenuOpen(false)}>Como Funciona</Link>
                   <Link href="#atendimento" onClick={() => setMobileMenuOpen(false)}>Atendimento</Link>
                   <Link href="#depoimentos" onClick={() => setMobileMenuOpen(false)}>Depoimentos</Link>
-                  <Link href="#proposta" onClick={() => setMobileMenuOpen(false)}>Proposta</Link>
                   <a
                       href="https://wa.me/5561981245568?text=Olá%2C%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20conversa."
                       target="_blank"

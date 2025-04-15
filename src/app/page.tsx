@@ -81,7 +81,7 @@ export default function Home() {
         <main className="flex-1 w-full">
           {/* Hero Section */}
           <section id="inicio" className="w-full relative">
-            <div className="relative w-full min-h-[350px] sm:min-h-[400px] md:min-h-[500px] lg:min-h-[600px]">
+            <div className="relative w-full min-h-[350px] sm:min-h-[400px] md:min-h-[500px] lg:min-h-[900px]">
 
             <Image
                   src="/images/banner2.jpg"

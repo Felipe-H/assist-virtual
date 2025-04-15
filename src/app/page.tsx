@@ -1,14 +1,20 @@
+"use client";
+
 import Image from "next/image"
 import Link from "next/link"
 import {CheckCircle, ChevronDown, Phone, Star} from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
+import { useState } from "react";
 
 export default function Home() {
+  const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+
   return (
       <div className="flex min-h-screen flex-col items-center w-full bg-[#f5f5f5]">
         <header className="sticky top-0 z-40 w-full bg-white/90 backdrop-blur-sm border-b border-purple-200">
-          <div className="container mx-auto flex h-16 items-center justify-between px-4 sm:px-6 lg:px-8 max-w-7xl">
+          <div className="container mx-auto flex h-16 items-center justify-between px-4 sm:px-6 lg:px-8 max-w-7xl relative">
             <div className="flex items-center gap-2">
               <Image
                   src="/images/logo1.png"
@@ -18,53 +24,64 @@ export default function Home() {
                   className="object-contain"
               />
             </div>
+
+            {/* Menu Desktop */}
             <nav className="hidden md:flex gap-6">
-              <Link href="#inicio" className="text-sm font-medium text-black hover:text-purple-700">
-                Início
-              </Link>
-              <Link href="#quem-somos" className="text-sm font-medium text-black hover:text-purple-700">
-                Quem Somos
-              </Link>
-              <Link href="#como-funciona" className="text-sm font-medium text-black hover:text-purple-700">
-                Como Funciona
-              </Link>
-              <Link href="#atendimento" className="text-sm font-medium text-black hover:text-purple-700">
-                Atendimento
-              </Link>
-              <Link href="#depoimentos" className="text-sm font-medium text-black hover:text-purple-700">
-                Depoimentos
-              </Link>
-              <Link href="#proposta" className="text-sm font-medium text-black hover:text-purple-700">
-                Proposta
-              </Link>
+              <Link href="#inicio" className="text-sm font-medium text-black hover:text-purple-700">Início</Link>
+              <Link href="#quem-somos" className="text-sm font-medium text-black hover:text-purple-700">Quem Somos</Link>
+              <Link href="#como-funciona" className="text-sm font-medium text-black hover:text-purple-700">Como Funciona</Link>
+              <Link href="#atendimento" className="text-sm font-medium text-black hover:text-purple-700">Atendimento</Link>
+              <Link href="#depoimentos" className="text-sm font-medium text-black hover:text-purple-700">Depoimentos</Link>
+              <Link href="#proposta" className="text-sm font-medium text-black hover:text-purple-700">Proposta</Link>
             </nav>
-            <Button className="hidden md:flex bg-purple-600 hover:bg-purple-700 text-white">Fale Conosco</Button>
-            <Button variant="outline" size="icon" className="md:hidden border-purple-300">
+
+            <Button className="hidden md:flex bg-purple-600 hover:bg-purple-700 text-white">
+              Fale Conosco
+            </Button>
+
+            {/* Botão hamburguer */}
+            <Button
+                variant="outline"
+                size="icon"
+                className="md:hidden border-purple-300"
+                onClick={() => setMobileMenuOpen(!isMobileMenuOpen)}
+            >
               <span className="sr-only">Menu</span>
-              <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="h-6 w-6"
-              >
-                <line x1="4" x2="20" y1="12" y2="12" />
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+                   viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"
+                   className="h-6 w-6">
                 <line x1="4" x2="20" y1="6" y2="6" />
+                <line x1="4" x2="20" y1="12" y2="12" />
                 <line x1="4" x2="20" y1="18" y2="18" />
               </svg>
             </Button>
+
+            {/* Menu Mobile */}
+            {isMobileMenuOpen && (
+                <div className="absolute top-16 right-4 bg-white border border-purple-200 shadow-lg rounded-md p-4 flex flex-col gap-4 z-50 md:hidden w-60">
+                  <Link href="#inicio" onClick={() => setMobileMenuOpen(false)}>Início</Link>
+                  <Link href="#quem-somos" onClick={() => setMobileMenuOpen(false)}>Quem Somos</Link>
+                  <Link href="#como-funciona" onClick={() => setMobileMenuOpen(false)}>Como Funciona</Link>
+                  <Link href="#atendimento" onClick={() => setMobileMenuOpen(false)}>Atendimento</Link>
+                  <Link href="#depoimentos" onClick={() => setMobileMenuOpen(false)}>Depoimentos</Link>
+                  <Link href="#proposta" onClick={() => setMobileMenuOpen(false)}>Proposta</Link>
+                  <a
+                      href="https://wa.me/5561981245568?text=Olá%2C%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20conversa."
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-purple-700 font-semibold"
+                  >
+                    Fale Conosco
+                  </a>
+                </div>
+            )}
           </div>
         </header>
 
         <main className="flex-1 w-full">
           {/* Hero Section */}
           <section id="inicio" className="w-full relative">
-            <div className="relative h-screen w-full">
+            <div className="relative aspect-[9/16] sm:aspect-[16/9] w-full">
               <Image
                   src="/images/banner2.jpg"
                   alt="NOVA Assistência Virtual"

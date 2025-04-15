@@ -82,7 +82,7 @@ export default function Home() {
                   <Link href="#atendimento" onClick={() => setMobileMenuOpen(false)}>Atendimento</Link>
                   <Link href="#depoimentos" onClick={() => setMobileMenuOpen(false)}>Depoimentos</Link>
                   <a
-                      href="https://wa.me/5561981245568?text=Olá%2C%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20conversa."
+                      href="https://wa.me/5521982262570?text=Olá%2C%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20conversa."
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-purple-700 font-semibold"

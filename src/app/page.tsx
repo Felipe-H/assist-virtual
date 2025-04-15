@@ -2,7 +2,7 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import {CheckCircle, ChevronDown, Phone, Star} from "lucide-react"
+import {CheckCircle, ChevronDown, Heart, MessageCircle, Phone, Smile, Star, Users} from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { useState } from "react";
@@ -35,7 +35,7 @@ export default function Home() {
                 <Link href="#como-funciona" className="text-sm font-medium text-black hover:text-purple-700">Como Funciona</Link>
                 <Link href="#atendimento" className="text-sm font-medium text-black hover:text-purple-700">Atendimento</Link>
                 <Link href="#depoimentos" className="text-sm font-medium text-black hover:text-purple-700">Depoimentos</Link>
-                {/*<Link href="#proposta" className="text-sm font-medium text-black hover:text-purple-700">Proposta</Link>*/}
+                <Link href="#atendimento-humanizado" className="text-sm font-medium text-black hover:text-purple-700">Atendimento humanizado</Link>
               </nav>
 
               <a
@@ -81,6 +81,7 @@ export default function Home() {
                   <Link href="#como-funciona" onClick={() => setMobileMenuOpen(false)}>Como Funciona</Link>
                   <Link href="#atendimento" onClick={() => setMobileMenuOpen(false)}>Atendimento</Link>
                   <Link href="#depoimentos" onClick={() => setMobileMenuOpen(false)}>Depoimentos</Link>
+                  <Link href="#atendimento-humanizado" onClick={() => setMobileMenuOpen(false)}>Atendimento Humanizado</Link>
                   <a
                       href="https://wa.me/5521982262570?text=Olá%2C%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20conversa."
                       target="_blank"
@@ -100,7 +101,7 @@ export default function Home() {
             <div className="relative w-full min-h-[350px] sm:min-h-[400px] md:min-h-[500px] lg:min-h-[900px]">
 
             <Image
-                  src="/images/banner2.jpg"
+                  src="/images/newbanner.jpg"
                   alt="NOVA Assistência Virtual"
                   fill
                   className="object-cover"
@@ -119,186 +120,6 @@ export default function Home() {
                     <ChevronDown className="h-6 w-6" />
                   </div>
                 </a>
-              </div>
-            </div>
-          </section>
-
-          {/* Quem Somos */}
-          <section id="quem-somos" className="w-full py-16 bg-gradient-to-b from-purple-50 to-white">
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
-              {/* Título da seção */}
-              <div className="text-center mb-12">
-                <h2 className="text-4xl font-bold text-purple-800">Quem somos nós?</h2>
-              </div>
-
-              <div className="bg-white p-8 rounded-lg shadow-sm mb-8 border border-purple-100 space-y-12">
-
-                {/* Bloco Ana Júlia */}
-                <div className="flex flex-col md:flex-row gap-8 items-center">
-                  <div className="flex-1">
-                    <h3 className="text-xl font-bold text-purple-700 mb-4">Ana Júlia</h3>
-                    <p className="mb-4 text-black">
-                      Me chamo Ana Júlia, sou a CEO da empresa e tenho ampla experiência com médicos, dentistas e
-                      profissionais da saúde, já ofereci suporte para mais de 40 profissionais.
-                    </p>
-                    <p className="text-black">
-                      O foco de nossa empresa é otimizar cada vez mais o seu negócio, oferecendo suporte especializado,
-                      aplicando estratégias de conversão, otimizando a organização de seu negócio e fidelizando seus
-                      pacientes.
-                    </p>
-                  </div>
-                  <div className="w-48 h-48 rounded-full overflow-hidden border-4 border-purple-200">
-                    <Image
-                        src="/images/anajulia4.jpg"
-                        alt="Ana Júlia"
-                        width={192}
-                        height={192}
-                        className="object-cover"
-                    />
-                  </div>
-                </div>
-
-                {/* Bloco Isabella Borba */}
-                <div className="flex flex-col md:flex-row gap-8 items-center border-t border-purple-100 pt-8">
-                  <div className="flex-1">
-                    <h3 className="text-xl font-bold text-purple-700 mb-4">Isabella Borba</h3>
-                    <p className="mb-4 text-black">
-                      Meu nome é Isabella Borba, trabalho com publicidade há 7 anos. Sou sócia da Ana Júlia Assistente
-                      Virtual e atuo no suporte geral, na criação de artes gráficas e no gerenciamento de Instagram dos
-                      clientes.
-                    </p>
-                    <a
-                        href="https://www.behance.net/isabellaborba"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="italic underline text-purple-700 hover:text-purple-900"
-                    >
-                      Clique aqui para acessar meu Portfólio individual.
-                    </a>
-                  </div>
-                  <div className="w-48 h-48 rounded-full overflow-hidden border-4 border-purple-200">
-                    <Image
-                        src="/images/isabella.jpg"
-                        alt="Isabella Borba"
-                        width={192}
-                        height={192}
-                        className="object-cover"
-                    />
-                  </div>
-                </div>
-
-              </div>
-            </div>
-          </section>
-
-
-          {/* Como Funciona */}
-          <section id="como-funciona" className="w-full py-16 bg-white">
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
-              <h2 className="text-4xl font-bold text-center mb-12 text-purple-800">Como funciona?</h2>
-              <div className="bg-gradient-to-r from-purple-50 to-white p-8 rounded-lg shadow-sm border border-purple-100">
-                <div className="flex flex-col md:flex-row justify-between items-center gap-4 mb-12">
-                  <div className="text-center">
-                    <div className="font-bold text-xl mb-2 text-purple-700">1</div>
-                    <div className="text-sm font-bold text-black">O SEU CLIENTE BUSCA</div>
-                  </div>
-                  <div className="hidden md:block text-green-600">
-                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path
-                          d="M5 12H19M19 12L12 5M19 12L12 19"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                      />
-                    </svg>
-                  </div>
-                  <div className="text-center border-2 border-green-600 rounded-lg p-4 bg-white">
-                    <div className="font-bold text-xl mb-2 text-purple-700">2</div>
-                    <div className="text-sm font-bold text-black">ATENDEMOS DE FORMA ACOLHEDORA</div>
-                  </div>
-                  <div className="hidden md:block text-green-600">
-                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path
-                          d="M5 12H19M19 12L12 5M19 12L12 19"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                      />
-                    </svg>
-                  </div>
-                  <div className="text-center">
-                    <div className="font-bold text-xl mb-2 text-purple-700">3</div>
-                    <div className="text-sm font-bold text-black">AGENDAMENTO REALIZADO</div>
-                  </div>
-                  <div className="hidden md:block text-green-600">
-                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path
-                          d="M5 12H19M19 12L12 5M19 12L12 19"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                      />
-                    </svg>
-                  </div>
-                  <div className="text-center border-2 border-green-600 rounded-lg p-4 bg-white">
-                    <div className="font-bold text-xl mb-2 text-purple-700">4</div>
-                    <div className="text-sm font-bold text-black">VOCÊ FOCA APENAS NA CONSULTA</div>
-                  </div>
-                </div>
-
-                <div className="text-center space-y-4 mb-12">
-                  <p className="text-base text-purple-700 font-medium text-lg">
-                    O atendimento humanizado proporciona:
-                  </p>
-                  <p className="text-lg md:text-xl text-black font-semibold max-w-2xl mx-auto">
-                    Uma experiência personalizada, comunicação eficaz e construção de relacionamentos sólidos com os clientes.
-                  </p>
-                </div>
-
-                <div className="flex flex-col items-center">
-                  <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M20 12V22H4V12"
-                        stroke="#9333ea"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                    />
-                    <path
-                        d="M22 7H2V12H22V7Z"
-                        stroke="#9333ea"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                    />
-                    <path d="M12 22V7" stroke="#9333ea" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                    <path
-                        d="M12 7H16.5C17.163 7 17.7989 6.73661 18.2678 6.26777C18.7366 5.79893 19 5.16304 19 4.5C19 3.83696 18.7366 3.20107 18.2678 2.73223C17.7989 2.26339 17.163 2 16.5 2C13 2 12 7 12 7Z"
-                        stroke="#9333ea"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                    />
-                    <path
-                        d="M12 7H7.5C6.83696 7 6.20107 6.73661 5.73223 6.26777C5.26339 5.79893 5 5.16304 5 4.5C5 3.83696 5.26339 3.20107 5.73223 2.73223C6.20107 2.26339 6.83696 2 7.5 2C11 2 12 7 12 7Z"
-                        stroke="#9333ea"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                    />
-                  </svg>
-
-                  <p className="text-lg font-bold text-purple-700 mt-4 mb-2">
-                    Isso tudo é personalizado de acordo com a preferência de cada cliente.
-                  </p>
-                  <p className="text-black mb-2 font-medium text-lg">Entretanto todos atendimentos possuem o mesmo objetivo:</p>
-                  <p className="text-xl font-bold text-purple-800 text-center">
-                    Entregar excelência e fazer que seus clientes possuam uma experiência única desde o primeiro contato.
-                  </p>
-                </div>
               </div>
             </div>
           </section>
@@ -362,6 +183,246 @@ export default function Home() {
             </div>
           </section>
 
+          {/* Quem Somos */}
+          <section id="quem-somos" className="w-full py-16 bg-gradient-to-b from-purple-50 to-white">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
+              {/* Título da seção */}
+              <div className="text-center mb-12">
+                <h2 className="text-4xl font-bold text-purple-800">Quem somos nós?</h2>
+              </div>
+
+              <div className="bg-white p-8 rounded-lg shadow-sm mb-8 border border-purple-100 space-y-12">
+
+                {/* Bloco Ana Júlia */}
+                <div className="flex flex-col md:flex-row gap-8 items-center">
+                  <div className="flex-1">
+                    <h3 className="text-xl font-bold text-purple-700 mb-4">Ana Júlia</h3>
+                    <p className="mb-4 text-black">
+                      CEO da empresa com ampla experiência com médicos, dentistas e profissionais da saúde, mais de
+                      50 consultórios e clínicas atendidos. Especialista em gatilhos mentais e estratégias de agendamentos
+                    </p>
+                    <p className="text-black">
+                      O foco de nossa empresa é otimizar cada vez mais o seu negócio, oferecendo suporte especializado,
+                      aplicando estratégias de conversão, otimizando a organização de seu negócio e fidelizando seus
+                      pacientes.
+                    </p>
+                  </div>
+                  <div className="w-48 h-48 rounded-full overflow-hidden border-4 border-purple-200">
+                    <Image
+                        src="/images/anajulia4.jpg"
+                        alt="Ana Júlia"
+                        width={192}
+                        height={192}
+                        className="object-cover"
+                    />
+                  </div>
+                </div>
+
+                {/* Bloco Isabella Borba */}
+                <div className="flex flex-col md:flex-row gap-8 items-center border-t border-purple-100 pt-8">
+                  <div className="flex-1">
+                    <h3 className="text-xl font-bold text-purple-700 mb-4">Isabella Borba</h3>
+                    <p className="mb-4 text-black">
+                      Sócia, Social Media e Assistente Virtual. Ampla experiência em redes sociais, estratégia de vendas e atendimento ao público.
+                    </p>
+                    <a
+                        href="https://www.behance.net/isabellaborba"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="italic underline text-purple-700 hover:text-purple-900"
+                    >
+                      Clique aqui para acessar meu Portfólio individual.
+                    </a>
+                  </div>
+                  <div className="w-48 h-48 rounded-full overflow-hidden border-4 border-purple-200">
+                    <Image
+                        src="/images/isabella.jpg"
+                        alt="Isabella Borba"
+                        width={192}
+                        height={192}
+                        className="object-cover"
+                    />
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </section>
+
+          {/* NOVA SEÇÃO: Atendimento Humanizado */}
+          <section id="atendimento-humanizado" className="w-full py-16 bg-gradient-to-b from-white to-purple-100">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
+              <div className="text-center mb-12">
+                <h2 className="text-4xl font-bold mb-4 text-purple-800">O Poder do Atendimento Humanizado</h2>
+                <p className="text-lg text-gray-700 max-w-3xl mx-auto">
+                  Mais do que um diferencial, o atendimento humanizado é a essência que transforma a experiência do
+                  paciente e potencializa os resultados do seu consultório.
+                </p>
+              </div>
+
+              <div className="bg-white p-8 rounded-xl shadow-md border border-purple-200">
+                {/* Introdução */}
+                <div className="mb-10 text-center">
+                  <div className="w-20 h-20 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <Heart className="h-10 w-10 text-purple-700" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-purple-800 mb-4">O que é Atendimento Humanizado?</h3>
+                  <p className="text-gray-700 max-w-3xl mx-auto">
+                    É uma abordagem que coloca o ser humano no centro do processo, reconhecendo suas necessidades
+                    emocionais, além das técnicas. Vai além do simples atendimento, criando uma conexão genuína que
+                    transmite segurança, empatia e confiança desde o primeiro contato.
+                  </p>
+                </div>
+
+                {/* Cards de benefícios */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+                  <Card className="border border-purple-200 hover:shadow-md transition-shadow">
+                    <CardContent className="pt-6">
+                      <div className="flex flex-col items-center text-center">
+                        <div className="w-14 h-14 bg-purple-100 rounded-full flex items-center justify-center mb-4">
+                          <Users className="h-7 w-7 text-purple-700" />
+                        </div>
+                        <h4 className="text-xl font-bold text-purple-800 mb-2">Fidelização</h4>
+                        <p className="text-gray-700">
+                          Pacientes que se sentem acolhidos e valorizados retornam e recomendam seus serviços, criando uma
+                          base sólida de clientes fiéis.
+                        </p>
+                      </div>
+                    </CardContent>
+                  </Card>
+
+                  <Card className="border border-purple-200 hover:shadow-md transition-shadow">
+                    <CardContent className="pt-6">
+                      <div className="flex flex-col items-center text-center">
+                        <div className="w-14 h-14 bg-purple-100 rounded-full flex items-center justify-center mb-4">
+                          <MessageCircle className="h-7 w-7 text-purple-700" />
+                        </div>
+                        <h4 className="text-xl font-bold text-purple-800 mb-2">Comunicação Eficaz</h4>
+                        <p className="text-gray-700">
+                          Estabelece canais claros de comunicação, reduzindo mal-entendidos e aumentando a satisfação do
+                          paciente com o serviço.
+                        </p>
+                      </div>
+                    </CardContent>
+                  </Card>
+
+                  <Card className="border border-purple-200 hover:shadow-md transition-shadow">
+                    <CardContent className="pt-6">
+                      <div className="flex flex-col items-center text-center">
+                        <div className="w-14 h-14 bg-purple-100 rounded-full flex items-center justify-center mb-4">
+                          <Smile className="h-7 w-7 text-purple-700" />
+                        </div>
+                        <h4 className="text-xl font-bold text-purple-800 mb-2">Experiência Positiva</h4>
+                        <p className="text-gray-700">
+                          Transforma momentos de ansiedade em experiências positivas, criando memórias agradáveis
+                          associadas ao seu consultório.
+                        </p>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
+
+                {/* Resultados */}
+                <div className="bg-gradient-to-r from-purple-50 to-white p-6 rounded-lg border border-purple-100">
+                  <h3 className="text-xl font-bold text-purple-800 mb-4 text-center">Resultados Comprovados</h3>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                    <div className="p-4">
+                      <div className="text-3xl font-bold text-purple-700 mb-2">+40%</div>
+                      <p className="text-sm text-gray-700">Aumento na taxa de retorno de pacientes</p>
+                    </div>
+
+                    <div className="p-4">
+                      <div className="text-3xl font-bold text-purple-700 mb-2">+65%</div>
+                      <p className="text-sm text-gray-700">Aumento nas recomendações e indicações</p>
+                    </div>
+
+                    <div className="p-4">
+                      <div className="text-3xl font-bold text-purple-700 mb-2">-30%</div>
+                      <p className="text-sm text-gray-700">Redução em cancelamentos de última hora</p>
+                    </div>
+
+                    <div className="p-4">
+                      <div className="text-3xl font-bold text-purple-700 mb-2">+85%</div>
+                      <p className="text-sm text-gray-700">Satisfação geral dos pacientes</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Citação */}
+                <div className="mt-10 text-center">
+                  <blockquote className="italic text-xl text-gray-700 max-w-3xl mx-auto">
+                    "O atendimento humanizado não é apenas uma estratégia de negócio, é um compromisso com o bem-estar e a
+                    dignidade de cada pessoa que confia em nossos serviços."
+                  </blockquote>
+                  <div className="mt-4 font-semibold text-purple-800">— Equipe NOVA Assistência Virtual</div>
+                </div>
+              </div>
+
+              {/* CTA */}
+            </div>
+          </section>
+
+
+          {/* Como Funciona */}
+          <section id="como-funciona" className="w-full py-16 bg-white">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
+              <h2 className="text-4xl font-bold text-center mb-12 text-purple-800">Como funciona?</h2>
+              <div className="bg-gradient-to-r from-purple-50 to-white p-8 rounded-lg shadow-sm border border-purple-100">
+                <div className="text-center space-y-4 mb-12">
+                  <p className="text-base text-purple-700 font-medium text-lg">
+                    O atendimento humanizado proporciona:
+                  </p>
+                  <p className="text-lg md:text-xl text-black font-semibold max-w-2xl mx-auto">
+                    Uma experiência personalizada, comunicação eficaz e construção de relacionamentos sólidos com os clientes.
+                  </p>
+                </div>
+
+                <div className="flex flex-col items-center">
+                  <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M20 12V22H4V12"
+                        stroke="#9333ea"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                    />
+                    <path
+                        d="M22 7H2V12H22V7Z"
+                        stroke="#9333ea"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                    />
+                    <path d="M12 22V7" stroke="#9333ea" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                    <path
+                        d="M12 7H16.5C17.163 7 17.7989 6.73661 18.2678 6.26777C18.7366 5.79893 19 5.16304 19 4.5C19 3.83696 18.7366 3.20107 18.2678 2.73223C17.7989 2.26339 17.163 2 16.5 2C13 2 12 7 12 7Z"
+                        stroke="#9333ea"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                    />
+                    <path
+                        d="M12 7H7.5C6.83696 7 6.20107 6.73661 5.73223 6.26777C5.26339 5.79893 5 5.16304 5 4.5C5 3.83696 5.26339 3.20107 5.73223 2.73223C6.20107 2.26339 6.83696 2 7.5 2C11 2 12 7 12 7Z"
+                        stroke="#9333ea"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                    />
+                  </svg>
+
+                  <p className="text-lg font-bold text-purple-700 mt-4 mb-2">
+                    Isso tudo é personalizado de acordo com a preferência de cada cliente.
+                  </p>
+                  <p className="text-black mb-2 font-medium text-lg">Entretanto todos atendimentos possuem o mesmo objetivo:</p>
+                  <p className="text-xl font-bold text-purple-800 text-center">
+                    Entregar excelência e fazer que seus clientes possuam uma experiência única desde o primeiro contato.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+
 
           {/* Depoimentos */}
           <section id="depoimentos" className="w-full py-16 bg-purple-50">
@@ -383,7 +444,7 @@ export default function Home() {
               </div>
 
               <h2 className="text-4xl font-bold text-center mb-12 text-purple-800">
-                O que nossos clientes dizem sobre nós?
+                Depoimento de clientes
               </h2>
 
               <div className="space-y-8">

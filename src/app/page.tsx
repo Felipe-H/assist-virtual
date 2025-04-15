@@ -296,61 +296,56 @@ export default function Home() {
               </p>
 
               <div className="bg-white p-8 rounded-lg shadow-sm border border-purple-100">
-                <div className="flex flex-col md:flex-row gap-8">
-                  <div className="md:w-2/5">
-                    <Image
-                        src="/placeholder.svg?height=400&width=300"
-                        alt="Assistência Virtual"
-                        width={300}
-                        height={400}
-                        className="object-cover rounded-lg border border-purple-200"
-                    />
-                  </div>
-                  <div className="md:w-3/5">
-                    <div className="mb-8">
-                      <div className="flex items-center mb-4">
-                        <div className="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center mr-4">
-                          <span className="font-bold text-purple-700">01</span>
-                        </div>
-                        <h3 className="text-xl font-bold text-purple-800">SCRIPT PERSONALIZADO</h3>
-                      </div>
-                      <p className="text-black">
-                        Vamos <span className="font-bold text-purple-700">ajustar</span> ou{" "}
-                        <span className="font-bold text-purple-700">criar</span> um SCRIPT de atendimento personalizado
-                        para melhorar sua comunicação com o paciente e taxa de conversão.
-                      </p>
-                    </div>
+                <div className="flex flex-col items-center text-center space-y-12">
 
-                    <div className="mb-8">
-                      <div className="flex items-center mb-4">
-                        <div className="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center mr-4">
-                          <span className="font-bold text-purple-700">02</span>
-                        </div>
-                        <h3 className="text-xl font-bold text-purple-800">ESTRATÉGIAS</h3>
+                  {/* BLOCO 01 */}
+                  <div>
+                    <div className="flex items-center justify-center mb-4">
+                      <div className="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center mr-2">
+                        <span className="font-bold text-purple-700">01</span>
                       </div>
-                      <p className="text-black">
-                        Aplicação de Técnicas de Escassez, Gatilhos mentais, Proximidade com o paciente, Provas sociais e
-                        Atendimento Humanizado.
-                      </p>
+                      <h3 className="text-xl font-bold text-purple-800">SCRIPT PERSONALIZADO</h3>
                     </div>
-
-                    <div>
-                      <div className="flex items-center mb-4">
-                        <div className="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center mr-4">
-                          <span className="font-bold text-purple-700">03</span>
-                        </div>
-                        <h3 className="text-xl font-bold text-purple-800">FOLLOW-UP e AGILIDADE</h3>
-                      </div>
-                      <p className="text-black">
-                        Acompanhamento da lead com <span className="font-bold text-purple-700">Follow-up</span>, Respostas
-                        rápidas e Utilização de áudios para atrair a atenção do cliente.
-                      </p>
-                    </div>
+                    <p className="text-black max-w-2xl mx-auto">
+                      Vamos <span className="font-bold text-purple-700">ajustar</span> ou{" "}
+                      <span className="font-bold text-purple-700">criar</span> um SCRIPT de atendimento personalizado
+                      para melhorar sua comunicação com o paciente e taxa de conversão.
+                    </p>
                   </div>
+
+                  {/* BLOCO 02 */}
+                  <div>
+                    <div className="flex items-center justify-center mb-4">
+                      <div className="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center mr-2">
+                        <span className="font-bold text-purple-700">02</span>
+                      </div>
+                      <h3 className="text-xl font-bold text-purple-800">ESTRATÉGIAS</h3>
+                    </div>
+                    <p className="text-black max-w-2xl mx-auto">
+                      Aplicação de Técnicas de Escassez, Gatilhos mentais, Proximidade com o paciente,
+                      Provas sociais e Atendimento Humanizado.
+                    </p>
+                  </div>
+
+                  {/* BLOCO 03 */}
+                  <div>
+                    <div className="flex items-center justify-center mb-4">
+                      <div className="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center mr-2">
+                        <span className="font-bold text-purple-700">03</span>
+                      </div>
+                      <h3 className="text-xl font-bold text-purple-800">FOLLOW-UP e AGILIDADE</h3>
+                    </div>
+                    <p className="text-black max-w-2xl mx-auto">
+                      Acompanhamento da lead com <span className="font-bold text-purple-700">Follow-up</span>,
+                      Respostas rápidas e Utilização de áudios para atrair a atenção do cliente.
+                    </p>
+                  </div>
+
                 </div>
               </div>
             </div>
           </section>
+
 
           {/* Depoimentos */}
           <section id="depoimentos" className="w-full py-16 bg-purple-50">

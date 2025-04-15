@@ -437,16 +437,16 @@ export default function Home() {
                 Entre em contato agora mesmo e descubra como nossa assistência virtual pode otimizar seu tempo e aumentar
                 seus resultados.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button className="bg-white text-purple-800 hover:bg-purple-100 font-bold text-lg px-8 py-6">
-                  Agendar uma conversa
-                </Button>
-                <Button
-                    variant="outline"
-                    className="border-white text-white hover:bg-purple-700 font-bold text-lg px-8 py-6"
+              <div className="flex justify-center">
+                <a
+                    href="https://wa.me/5521982262570" // Substitua pelo seu número com DDI e DDD, sem traços ou parênteses
+                    target="_blank"
+                    rel="noopener noreferrer"
                 >
-                  Conhecer mais serviços
-                </Button>
+                  <Button className="bg-white text-purple-800 hover:bg-purple-100 font-bold text-lg px-8 py-6">
+                    Agendar uma conversa
+                  </Button>
+                </a>
               </div>
             </div>
           </section>
